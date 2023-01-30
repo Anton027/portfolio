@@ -24,6 +24,11 @@
   transition: box-shadow var(--transition-time) var(--function-time);
 }
 
+.portfolio__title {
+  margin-bottom: 25px;
+
+}
+
 .portfolio__thumb {
   position: relative;
   display: flex;
