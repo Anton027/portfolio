@@ -1,0 +1,73 @@
+.filter {
+  @media screen and (min-width: 480px) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  @include tab {
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+    
+  }
+  @media screen and (min-width: 1200px) {
+    margin-bottom: 50px;
+  }
+  margin-bottom: 40px;
+}
+.filter .filter__item + .filter__item {
+  @include tab{
+    margin-left: 8px;
+  }
+  
+}
+
+@media screen and (min-width: 480px) and(max-width: 767px) {
+  .filter__item {
+    margin-left: 8px;
+    margin-bottom: 15px;
+    &:nth-child(4),&:nth-child(1) {
+      margin-left: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .filter{
+    display: flex;
+    flex-wrap: wrap;
+  
+    margin: -4px;
+  }
+  .filter__item {
+    margin: 4px;
+    flex-basis: calc(100% / 2 - 8px);
+  }
+}
+
+.filter__btn {
+  min-width: 73px;
+  padding: 6px 22px;
+  margin-top: 0;
+
+  background: var(--first-btn-color);
+  line-height: 1.6;
+  font-weight: 500;
+
+  transition: background-color var(--transition-time) var(--function-time),
+    color var(--transition-time) var(--function-time),
+    box-shadow var(--transition-time) var(--function-time);
+
+  &:hover,
+  &:focus {
+    color: var(--main-light-color);
+    background-color: var(--accent-color);
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+      0px 2px 2px rgba(0, 0, 0, 0.12);
+  }
+}
+
+.btn--current {
+  color: var(--main-light-color);
+  background-color: var(--accent-color);
+}
